@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/history.css">
+
+    <script src="assets/script/script.js" defer></script>
+
+    <title>HTMLs Historia & DOM</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header-caption">HTMLs Historia & Dokumentobjektmodellen</h1>
+        </header>
+        <nav class="primary-navigation">
+            <ul class="primary-navigation__links">
+                <li><a class="nav-link" href="#">Hem</a></li>
+                <li><a class="nav-link" href="#header">Historia</a></li>
+                <li><a class="nav-link" href="#dom">Hur funkar det?</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <section class="main-content__history">
+                <header class="header-html" id="header">
+                    <h2 class="sub-header-caption">HTMLs Historia</h2>
+                </header>
+                <div class="history">
+                    <p class="paragraphs">
+                        Under de första fem åren (1990-1995) gick HTML igenom ett antal revisioner och fick ett antal tillägg, främst värd först på CERN och sedan på IETF.
+                        Med skapandet av W3C ändrades HTMLs utvecklingsplats igen. Ett första misslyckat försök att utöka HTML 1995, känd som HTML 3.0, gjorde sedan plats för en mer praktisk metod känd som HTML 3.2, som slutfördes 1997. HTML4 följde snabbt senare samma år.
+                    </p>
+                    <img class="inline-image inline-image-full" src=" assets/images/altavista.jpg" alt="altavista 1997">
+                    <p class="paragraphs">
+                        Året därpå beslutade W3C-medlemskapet att sluta utveckla HTML och istället börja arbeta på en XML-baserad motsvarighet, kallad XHTML. Detta försök började med en omformulering av HTML4 i XML, känd som XHTML 1.0, som inte lade till några nya funktioner förutom den nya serialiseringen, och som slutfördes 2000. Efter XHTML 1.0 vändes W3C:s fokus till att göra det lättare för andra arbetsgrupper att utöka XHTML, under flaggan XHTML Modularization. Samtidigt med detta arbetade W3C också på ett nytt språk som inte var kompatibelt med de tidigare HTML- och XHTML-språken, kallar det XHTML2.
+                    </p>
+                    <p class="paragraphs">
+                        Runt den tid då HTMLs utveckling stoppades 1998 specificerades delar av API:et för HTML utvecklat av webbläsarleverantörer och publicerades under namnet DOM Level 1 (1998) och DOM Level 2 Core och DOM Level 2 HTML (med start 2000 och som kulminerade 2003). Dessa ansträngningar försvann sedan, med några DOM nivå 3-specifikationer publicerade 2004 men arbetsgruppen stängdes innan alla nivå 3-utkast var färdiga.
+                    </p>
+                </div>
+            </section>
+            <section id="dom" class="main-content__dom">
+                <header class="header-dom" id="dom">
+                    <h2 class="sub-header-caption">Hur fungerar webben och vad är DOM?</h2>
+                </header>
+                <div class="dom">
+                    <p class="paragraphs">
+                        Document Object Model, eller DOM, är ett programmeringsgränssnitt för HTML- och XML-dokument. Det ger en möjlighet för skript och program att dynamiskt komma åt och uppdatera innehåll, struktur och stil i ett dokument.
+                        DOM representerar ett HTML- eller XML-dokument i minnet som en trädliknande struktur, med varje element i dokumentet representerat som en nod i trädet. Detta gör att skript och program enkelt kan manipulera dokumentet genom att lägga till, ta bort eller ändra noder i trädet.
+                    </p>
+                    <p class="paragraphs">
+                        Till exempel kan ett skript använda DOM för att lägga till en ny paragraf i en webbsida, eller ändra färgen på en rubrik. Skriptet kan komma åt och ändra vilken del av dokumentet som helst genom att traversera trädet och interagera med noderna.
+                        DOM är en viktig del av webbutveckling, eftersom det tillåter skript och program att dynamiskt uppdatera innehållet och utseendet på webbsidor. Det stöds av de flesta moderna webbläsare och används av många bibliotek och ramverk, till exempel jQuery och React, för att ge kraftfulla och bekväma verktyg för att manipulera innehållet på en webbsida.
+                    </p>
+                    <div class="dom-area" id="dom-area">
+                        <div class="dom-area__input">
+                            <p class="sub-header-caption" id="dom-area__slider-text">Drag me! 0</p>
+                            <input type="range" min="0" max="3" value="0" autocomplete="off" id="dom-area__slider" oninput="updateSlider()">
+                        </div>
+                        <div class="dom-area__showcase">
+                            <input type="text" id="dom-area__input" value="Hello, world!" oninput="updateInput()">
+                            <div id="dom-area__output"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <ul class="footer-navigation">
+                <li><a class="nav-link" href="#">Tillbaka till toppen</a></li>
+                <li><a class="nav-link" href="mailto:cristopher.torgrip@elev.ga.ntig.se">Kontakta mig</a></li>
+            </ul>
+            <div class="footer__bottom-footer">
+                <p class="footer-text">Copyright &copy; 2022 Cristopher - Cooling McBooling AB</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
