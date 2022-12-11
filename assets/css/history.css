@@ -197,6 +197,7 @@ body {
     object-fit: cover;
 }
 
+/* Center an image without using a parent*/
 .center-image {
     display: block;
     margin-left: auto;
