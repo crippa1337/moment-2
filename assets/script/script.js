@@ -39,7 +39,6 @@ function updateSlider() {
             break;
         };
         case 3: {
-            jsEnabled = true;
             content.innerHTML = html + css;
             input.removeAttribute("disabled");
             updateVal(" SCRIPT");
