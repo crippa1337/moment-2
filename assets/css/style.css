@@ -94,11 +94,10 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 .main-content__dom {
-    height: 180vh;
+    height: 170vh;
 }
 
 .history {
@@ -108,20 +107,16 @@ body {
     gap: 2rem;
     grid-template-areas:
         "text img"
+        "text img"
+        "text img"
         "text text"
-        "img text"
         "text text"
-        "text text"
-        "img text"
+        "text img"
     ;
-
-    height: 60%;
-    padding-bottom: 1rem;
 }
 
 .dom {
     display: grid;
-    height: 70%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
@@ -129,8 +124,21 @@ body {
         "dom-img dom-img"
         "dom-area dom-area"
     ;
-    column-gap: 2rem;
-    row-gap: 5rem;
+    gap: 2rem;
+    height: 70%;
+}
+
+.laws {
+display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+        "text img"
+        "text img"
+        "text img"
+        "text img"
+    ;
+    gap: 2rem;
 }
 
 .dom-area {
@@ -196,7 +204,7 @@ body {
 /* image styling */
 
 .inline-image {
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,8 +302,8 @@ li:hover {
     color: var(--fg-clr-normal);
     background: var(--fg-clr-white);
     position: fixed;
-    z-index: 99;
-    translate: 0 -100%;
+    z-index: 99999;
+    translate: 0 -1000%;
     width: 10%;
     height: 50px;
     text-align: center;

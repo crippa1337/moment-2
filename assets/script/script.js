@@ -12,7 +12,7 @@ slider.addEventListener('input', updateSlider);
 
 function updateVal(type) {
     text = sliderText.innerText;
-    text = text.replace(/1 HTML|2 CSS|3 SCRIPT|0 NONE/g, '')
+    text = text.replace(/1 HTML|2 CSS|3 SCRIPT|0 NONE/, '')
     text += ' ' + slider.value + type;
     sliderText.innerText = text;
 };
