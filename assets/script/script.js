@@ -11,20 +11,22 @@ let css = '<style>@keyframes rotate { from {transform: rotate(0deg);} to {transf
 input.addEventListener('input', updateDOM);
 slider.addEventListener('input', updateSlider);
 
+
 // Using regular expression, replace the current value of the slider text with the new value text
 function updateVal(type) {
-    text = sliderText.innerText;
-    text = text.replace(/1 HTML|2 CSS|3 SCRIPT|0 NONE/, '')
-    text += ' ' + slider.value + type;
-    sliderText.innerText = text;
+    text = sliderText.innerText;   // Get the current value of the slider text
+    text = text.replace(/1 HTML|2 CSS|3 SCRIPT|0 NONE/, '')     // Replace the current value with the new value
+    text += ' ' + slider.value + type;   // Add the new value to the text variable
+    sliderText.innerText = text;  // Update the slider text with the new text 
 };
 
-// 
+
 function updateDOM() {
     // Update the html variable with the value of the text input
     html = input.value;
     updateSlider();
 };
+
 
 // Update the DOM playground based on the value of the slider
 function updateSlider() {
