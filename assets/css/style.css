@@ -30,7 +30,8 @@
     --ft-weight-700: 700;
     --ft-size-l: 3rem;
     --ft-size-m: 2rem;
-    --ft-size-s: 0.5rem;
+    --ft-size-s: 1.5rem;
+    --ft-size-xs: 1rem;
 }
 
 *,
@@ -46,30 +47,21 @@
 }
 
 body {
+    width: auto;
     background: var(--bg-clr-dark);
-    width: 100%;
-    height: 100%;
-
     display: flex;
     justify-content: center;
-}
-
-.container {
-    width: 60%;
 }
 
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    width: 100%;
     height: 10rem;
     background: var(--bg-clr-headfoot);
 }
 
 .primary-navigation {
-    width: 100%;
     box-sizing: border-box;
     background: var(--bg-clr-accent);
     height: 5rem;
@@ -96,32 +88,58 @@ body {
     align-items: center;
 }
 
-.main-content__dom {
-    height: 170vh;
-}
-
 .history {
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-areas:
+        "text"
+        "img"
+        "text"
+        "img"
+        "text"
+        "img"
+        "text"
+        "text"
+        "text"
+        "text"
+        "img"
+        "img"
+    ;
     gap: 2rem;
 }
 
 .dom {
     display: grid;
-    height: 70%;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "text"
+        "img"
+        "dom-area"
+    ;
     gap: 2rem;
 }
 
 .laws {
     display: grid;
+    grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-areas:
+            "text"
+            "img"
+            "text"
+            "img"
+            "text"
+            "img"
+            "text"
+            "img"
+        ;
     gap: 2rem;
 }
 
 .dom-area {
     grid-area: dom-area;
-    width: 100%;
-    height: 75vh;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-
     display: flex;
     flex-direction: column;
 }
@@ -134,23 +152,14 @@ body {
 }
 
 .dom-area__showcase {
-    width: 100%;
-    height: 100%;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.dom-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: dom-img;
-}
-
 .footer {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -175,101 +184,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-/* responsive styling */
-
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    .history {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(12, 1fr);
-        grid-template-areas:
-            "text"
-            "img"
-            "text"
-            "img"
-            "text"
-            "img"
-            "text"
-            "text"
-            "text"
-            "text"
-            "img"
-            "img"
-        ;
-    }
-
-    .dom {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-areas:
-            "text"
-            "dom-img"
-            "dom-area"
-        ;
-    }
-
-    .laws {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, 1fr);
-        grid-template-areas:
-            "text"
-            "img"
-            "text"
-            "img"
-            "text"
-            "img"
-            "text"
-            "img"
-        ;
-    }
-
-    
-}
-
-@media (min-width: 768px) and (max-width: 1184px) {
-    
-}
-
-@media (min-width: 1184px) {
-    .history {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-areas:
-            "text img"
-            "text img"
-            "text img"
-            "text text"
-            "text text"
-            "text img"
-        ;
-    }
-
-    .dom {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-areas:
-            "text text"
-            "dom-img dom-img"
-            "dom-area dom-area"
-    ;
-    }
-
-    .laws {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-areas:
-            "text img"
-            "text img"
-            "text img"
-            "text img"
-        ;
-    }
-}
-
 
 
 /* image styling */
@@ -333,7 +247,6 @@ p {
 
 .paragraphs {
     padding: 1rem;
-    text-align: justify;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
@@ -351,7 +264,6 @@ a {
 
 .nav-link {
     color: var(--fg-clr-link);
-    font-size: var(--ft-size-m);
     padding: 0.5rem;
     border-inline: 2px solid rgba(0, 0, 0, 0);
     border-radius: 0.5rem;
@@ -382,7 +294,7 @@ li:hover {
     width: 10%;
     height: 50px;
     text-align: center;
-    transition: translate 250ms ease-in-out;
+    transition: 250ms ease-in-out;
     padding: 0.75em;
     border: none;
     text-decoration: underline;
@@ -392,4 +304,93 @@ li:hover {
 .skip-link:hover {
     translate: 0;
 }
+
+/* responsive styling */
+
+@media (max-width: 768px) {
+    .header-caption {
+        font-size: var(--ft-size-s);
+    }
+
+    .primary-navigation {
+        height: 5rem;
+        padding-top: 0.75rem;
+    }
+
+    .primary-navigation__links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0.75rem;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-color: var(--fg-clr-linkaccent);
+    }
+
+    .nav-link {
+        font-size: var(--ft-size-xs);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1184px) {
+    .header-caption {
+        font-size: var(--ft-size-m);
+    }
+
+    .paragraphs {
+        font-size: var(--ft-size-s);
+    }
+
+    .primary-navigation {
+        height: 4rem;
+    }
+
+    .nav-link {
+        font-size: var(--ft-size-s);
+    }
+}
+
+@media (min-width: 1184px) {
+    .container {
+        width: 60%;
+    }
+
+    .history {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas:
+            "text img"
+            "text img"
+            "text img"
+            "text text"
+            "text text"
+            "text img"
+        ;
+    }
+
+    .dom {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "text img"
+            "dom-area dom-area"
+    ;
+    }
+
+    .laws {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+            "text img"
+            "text img"
+            "text img"
+            "text img"
+        ;
+    }
+
+    .nav-link {
+        font-size: var(--ft-size-m);
+    }
+}
+
 

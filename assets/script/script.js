@@ -12,10 +12,10 @@ input.addEventListener('input', updateDOM);
 slider.addEventListener('input', updateSlider);
 
 
-// Using regular expression, replace the current value of the slider text with the new value text
+// Using regular expression (regex), replace the current value of the slider text with the new value text
 function updateVal(type) {
     text = sliderText.innerText;   // Get the current value of the slider text
-    text = text.replace(/1 HTML|2 CSS|3 SCRIPT|0 NONE/, '')     // Replace the current value with the new value
+    text = text.replace(/1 HTML|2 CSS|3 SCRIPT|0 NONE/, '')     // Replace the current value with a new value using regex
     text += ' ' + slider.value + type;   // Add the new value to the text variable
     sliderText.innerText = text;  // Update the slider text with the new text 
 };
@@ -24,6 +24,7 @@ function updateVal(type) {
 function updateDOM() {
     // Update the html variable with the value of the text input
     html = input.value;
+    // Actually update the on-screen elements with the new value
     updateSlider();
 };
 
