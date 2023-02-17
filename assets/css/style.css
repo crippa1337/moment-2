@@ -228,12 +228,10 @@ body {
 
 .header-caption {
     margin: 0;
-    font-size: var(--ft-size-l);
+    font-size: clamp(var(--ft-size-s), 1rem + 2vw, var(--ft-size-l));
     font-weight: var(--ft-weight-700);
     color: var(--fg-clr-white);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    text-align: center;
 }
 
 .sub-header-caption {
@@ -370,10 +368,6 @@ li:hover {
 /* responsive styling */
 
 @media (max-width: 768px) {
-    .header-caption {
-        font-size: var(--ft-size-s);
-    }
-
     .primary-navigation {
         height: 5rem;
         padding-top: 0.75rem;
@@ -406,10 +400,6 @@ li:hover {
 @media (min-width: 768px) and (max-width: 1184px) {
     .container {
         width: 80%;
-    }
-
-    .header-caption {
-        font-size: var(--ft-size-m);
     }
 
     .paragraphs {
